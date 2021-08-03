@@ -49,8 +49,8 @@ module DADDA_Multiplier(A,B,Y);
 	 
 	 // Stage one  d=6
 	 Half_Adder HA11(.A_HA(Points[6][0]),.B_HA(Points[5][1]),.Sum(sum1[0]),.Carry(carry1[0]));
-	 Half_Adder HA12(.A_HA(Points[5][3]),.B_HA(Points[4][4]),.Sum(sum1[2]),.Carry(carry1[2]));
-	 Half_Adder HA13(.A_HA(Points[6][3]),.B_HA(Points[5][4]),.Sum(sum1[4]),.Carry(carry1[4]));
+	 Half_Adder HA12(.A_HA(Points[4][3]),.B_HA(Points[3][4]),.Sum(sum1[2]),.Carry(carry1[2]));
+	 Half_Adder HA13(.A_HA(Points[4][4]),.B_HA(Points[3][5]),.Sum(sum1[4]),.Carry(carry1[4]));
 	 
 	 Full_Adder FA11(.A_FL(Points[7][0]),.B_FL(Points[6][1]),.Carry_in(Points[5][2]),.Sum_FA(sum1[1]),.Carry_out_FA(carry1[1]));
 	 Full_Adder FA12(.A_FL(Points[7][1]),.B_FL(Points[6][2]),.Carry_in(Points[5][3]),.Sum_FA(sum1[3]),.Carry_out_FA(carry1[3]));
@@ -110,9 +110,9 @@ module DADDA_Multiplier(A,B,Y);
 	 
 	 // Stage 5 final stage
 	 
-	Half_Adder HA51(.A_HA(Points[1][0]),.B_HA(Points[1][1]),.Sum(Y[1]),.Carry(carry5[0]));
+	Half_Adder HA51(.A_HA(Points[1][0]),.B_HA(Points[0][1]),.Sum(Y[1]),.Carry(carry5[0]));
 	
-	Full_Adder FA51(.A_FL(sum4[0]),.B_FL(Points[2][2]),.Carry_in(carry5[0]),.Sum_FA(Y[2]),.Carry_out_FA(carry5[1]));
+	Full_Adder FA51(.A_FL(sum4[0]),.B_FL(Points[0][2]),.Carry_in(carry5[0]),.Sum_FA(Y[2]),.Carry_out_FA(carry5[1]));
 	Full_Adder FA52(.A_FL(sum4[1]),.B_FL(carry4[0]),.Carry_in(carry5[1]),.Sum_FA(Y[3]),.Carry_out_FA(carry5[2]));
 	Full_Adder FA53(.A_FL(sum4[2]),.B_FL(carry4[1]),.Carry_in(carry5[2]),.Sum_FA(Y[4]),.Carry_out_FA(carry5[3]));
 	Full_Adder FA54(.A_FL(sum4[3]),.B_FL(carry4[2]),.Carry_in(carry5[3]),.Sum_FA(Y[5]),.Carry_out_FA(carry5[4]));

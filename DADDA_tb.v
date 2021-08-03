@@ -42,18 +42,18 @@ module DADDA_tb;
 		// Initialize Inputs
 		$display ("*** TEST CASE 1 ***");
     
-		A = 8'd3;
-		B= 8'd4;
+		A = 8'd5;
+		B= 8'd6;
 		
 		
 
 		#10
 			 
-			if (Y==8'd12)
-				 $display (" PASSED") ;
+			if (Y==8'd30)
+				 $display (" PASSED Y= ",Y) ;
 			else
 				begin
-				 $display (" FAILED ",Y) ;
+				 $display (" FAILED Y= ",Y) ;
 				end
 
 
